@@ -1,4 +1,4 @@
-# CS 3013 Operating Systems WPI, 
+# CS 3013 Operating Systems, WPI
 ### A Term 2018
 ## Project 2 (20 pts)
 #### Assigned: Tuesday, September 4, 2018 

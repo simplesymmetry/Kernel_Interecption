@@ -1,0 +1,820 @@
+tom@tomm:~/Downloads/lib$ ls
+   Makefile
+tom@tomm:~/Downloads/lib$ sudo nano mymodule.c
+tom@tomm:~/Downloads/lib$ ls
+   Makefile  mymodule.c
+tom@tomm:~/Downloads/lib$ sudo rmmod mymodule.ko
+tom@tomm:~/Downloads/lib$ sudo make
+make -C /lib/modules/4.4.140tgraham/build M=/home/tom/Downloads/lib modules
+make[1]: Entering directory '/usr/src/linux-source-4.4.0/linux-source-4.4.0'
+  CC [M]  /home/tom/Downloads/lib/mymodule.o
+  Building modules, stage 2.
+  MODPOST 1 modules
+  CC      /home/tom/Downloads/lib/mymodule.mod.o
+  LD [M]  /home/tom/Downloads/lib/mymodule.ko
+make[1]: Leaving directory '/usr/src/linux-source-4.4.0/linux-source-4.4.0'
+tom@tomm:~/Downloads/lib$ sudo insmod mymodule.ko
+tom@tomm:~/Downloads/lib$ ls
+          modules.order   mymodule.c   mymodule.mod.c  mymodule.o
+Makefile  Module.symvers  mymodule.ko  mymodule.mod.o  mymodule.o.ur-safe
+tom@tomm:~/Downloads/lib$ cd ..
+tom@tomm:~/Downloads$ ls
+2.c  a.out  lib  mybackupmodule.c  preproj2tgraham.zip  proj2test.c
+tom@tomm:~/Downloads$ sudo nano 3.c
+tom@tomm:~/Downloads$ clear
+tom@tomm:~/Downloads$ ls
+2.c  3.c  a.out  lib  mybackupmodule.c  preproj2tgraham.zip  proj2test.c
+tom@tomm:~/Downloads$ gcc 3.c
+tom@tomm:~/Downloads$ ./a.out
+	 Test Call 1: 0
+tom@tomm:~/Downloads$ dmesg
+[ 8693.652263] Unloaded module!
+[ 8695.938400] Table at memory address: 0xC17DB180
+[ 8695.938408] Loaded module!
+[ 8946.141472] Unloaded module!
+[ 8977.046829] Table at memory address: 0xC17DB180
+[ 8977.046834] Loaded module!
+[ 9141.546463] Unloaded module!
+[ 9279.464925] Table at memory address: 0xC17DB180
+[ 9279.464929] Loaded module!
+[ 9382.032677] Unloaded module!
+[ 9418.401921] Table at memory address: 0xC17DB180
+[ 9418.401927] Loaded module!
+[ 9748.340658] Unloaded module!
+[ 9775.371959] Table at memory address: 0xC17DB180
+[ 9775.371967] Loaded module!
+[ 9851.559899] Unloaded module!
+[ 9943.453506] Table at memory address: 0xC17DB180
+[ 9943.453509] Loaded module!
+[10165.939759] Unloaded module!
+[10190.443190] Table at memory address: 0xC17DB180
+[10190.443198] Loaded module!
+[10613.539354] Unloaded module!
+[10626.657540] Table at memory address: 0xC17DB180
+[10626.657546] Loaded module!
+[11455.885886] Unloaded module!
+[11464.904836] Table at memory address: 0xC17DB180
+[11464.904844] Loaded module!
+[11681.598959] Unloaded module!
+[11758.489144] Table at memory address: 0xC17DB180
+[11758.489150] Loaded module!
+[12067.383386] Unloaded module!
+[12096.413734] Table at memory address: 0xC17DB180
+[12096.413738] Loaded module!
+[12210.653522] Unloaded module!
+[12344.408709] Table at memory address: 0xC17DB180
+[12344.408715] Loaded module!
+[15665.181368] Unloaded module!
+[15684.133794] Table at memory address: 0xC17DB180
+[15684.133797] Loaded module!
+[15684.766044] User 1000 is closing file: 3
+[15684.766048] User 1000 is closing file: 4
+[15684.766105] User 1000 is closing file: 4
+[15684.766110] User 1000 is closing file: 3
+[15684.766368] User 1000 is opening file: /etc/ld.so.cache
+[15684.766376] User 1000 is closing file: 3
+[15684.766384] User 1000 is opening file: /lib/i386-linux-gnu/libselinux.so.1
+[15684.766410] User 1000 is closing file: 3
+[15684.766420] User 1000 is opening file: /lib/i386-linux-gnu/libc.so.6
+[15684.766442] User 1000 is closing file: 3
+[15684.766452] User 1000 is opening file: /lib/i386-linux-gnu/libpcre.so.3
+[15684.766471] User 1000 is closing file: 3
+[15684.766479] User 1000 is opening file: /lib/i386-linux-gnu/libdl.so.2
+[15684.766497] User 1000 is closing file: 3
+[15684.766503] User 1000 is opening file: /lib/i386-linux-gnu/libpthread.so.0
+[15684.766524] User 1000 is closing file: 3
+[15684.766707] User 1000 is opening file: /proc/filesystems
+[15684.766737] User 1000 is closing file: 3
+[15684.766756] User 1000 is opening file: /usr/lib/locale/locale-archive
+[15684.766770] User 1000 is closing file: 3
+[15684.766817] User 1000 is opening file: .
+[15684.766903] User 1000 is closing file: 3
+[15684.767176] User 1000 is closing file: 1
+[15684.767183] User 1000 is closing file: 2
+[15688.391471] User 1000 is closing file: 3
+[15688.391475] User 1000 is closing file: 4
+[15688.391536] User 1000 is closing file: 4
+[15688.391542] User 1000 is closing file: 3
+[15688.391772] User 1000 is opening file: /etc/ld.so.cache
+[15688.391781] User 1000 is closing file: 3
+[15688.391789] User 1000 is opening file: /lib/i386-linux-gnu/libselinux.so.1
+[15688.391832] User 1000 is closing file: 3
+[15688.391841] User 1000 is opening file: /lib/i386-linux-gnu/libc.so.6
+[15688.391863] User 1000 is closing file: 3
+[15688.391872] User 1000 is opening file: /lib/i386-linux-gnu/libpcre.so.3
+[15688.391891] User 1000 is closing file: 3
+[15688.391899] User 1000 is opening file: /lib/i386-linux-gnu/libdl.so.2
+[15688.391917] User 1000 is closing file: 3
+[15688.391923] User 1000 is opening file: /lib/i386-linux-gnu/libpthread.so.0
+[15688.391943] User 1000 is closing file: 3
+[15688.392125] User 1000 is opening file: /proc/filesystems
+[15688.392154] User 1000 is closing file: 3
+[15688.392173] User 1000 is opening file: /usr/lib/locale/locale-archive
+[15688.392186] User 1000 is closing file: 3
+[15688.392234] User 1000 is opening file: .
+[15688.392258] User 1000 is closing file: 3
+[15688.392284] User 1000 is closing file: 1
+[15688.392286] User 1000 is closing file: 2
+[15691.324336] User 1000 is opening file: /etc/localtime
+[15691.324367] User 1000 is closing file: 17
+[15691.324397] User 1000 is opening file: /etc/localtime
+[15691.324405] User 1000 is closing file: 17
+[15698.325166] User 1000 is opening file: /etc/localtime
+[15698.325206] User 1000 is closing file: 17
+[15698.325249] User 1000 is opening file: /etc/localtime
+[15698.325262] User 1000 is closing file: 17
+[15701.288344] User 1000 is closing file: 4
+[15701.288385] User 1000 is closing file: 5
+[15705.324950] User 1000 is opening file: /etc/localtime
+[15705.324984] User 1000 is closing file: 17
+[15705.325018] User 1000 is opening file: /etc/localtime
+[15705.325028] User 1000 is closing file: 17
+[15714.325965] User 1000 is opening file: /etc/localtime
+[15714.325998] User 1000 is closing file: 17
+[15714.326032] User 1000 is opening file: /etc/localtime
+[15714.326041] User 1000 is closing file: 17
+[15721.325933] User 1000 is opening file: /etc/localtime
+[15721.326031] User 1000 is closing file: 17
+[15721.326066] User 1000 is opening file: /etc/localtime
+[15721.326078] User 1000 is closing file: 17
+[15727.208111] User 1000 is closing file: 3
+[15727.208117] User 1000 is closing file: 4
+[15727.208183] User 1000 is closing file: 4
+[15727.208189] User 1000 is closing file: 3
+[15727.208451] User 1000 is opening file: /usr/lib/sudo/tls/i686/sse2/cmov/libaudit.so.1
+[15727.208458] User 1000 is opening file: /usr/lib/sudo/tls/i686/sse2/libaudit.so.1
+[15727.208462] User 1000 is opening file: /usr/lib/sudo/tls/i686/cmov/libaudit.so.1
+[15727.208465] User 1000 is opening file: /usr/lib/sudo/tls/i686/libaudit.so.1
+[15727.208469] User 1000 is opening file: /usr/lib/sudo/tls/sse2/cmov/libaudit.so.1
+[15727.208472] User 1000 is opening file: /usr/lib/sudo/tls/sse2/libaudit.so.1
+[15727.208476] User 1000 is opening file: /usr/lib/sudo/tls/cmov/libaudit.so.1
+[15727.208479] User 1000 is opening file: /usr/lib/sudo/tls/libaudit.so.1
+[15727.208483] User 1000 is opening file: /usr/lib/sudo/i686/sse2/cmov/libaudit.so.1
+[15727.208486] User 1000 is opening file: /usr/lib/sudo/i686/sse2/libaudit.so.1
+[15727.208490] User 1000 is opening file: /usr/lib/sudo/i686/cmov/libaudit.so.1
+[15727.208493] User 1000 is opening file: /usr/lib/sudo/i686/libaudit.so.1
+[15727.208497] User 1000 is opening file: /usr/lib/sudo/sse2/cmov/libaudit.so.1
+[15727.208501] User 1000 is opening file: /usr/lib/sudo/sse2/libaudit.so.1
+[15727.208504] User 1000 is opening file: /usr/lib/sudo/cmov/libaudit.so.1
+[15727.208508] User 1000 is opening file: /usr/lib/sudo/libaudit.so.1
+[15727.208513] User 1000 is opening file: /etc/ld.so.cache
+[15727.208520] User 1000 is closing file: 3
+[15727.208531] User 1000 is opening file: /lib/i386-linux-gnu/libaudit.so.1
+[15727.208558] User 1000 is closing file: 3
+[15727.208565] User 1000 is opening file: /usr/lib/sudo/libselinux.so.1
+[15727.208571] User 1000 is opening file: /lib/i386-linux-gnu/libselinux.so.1
+[15727.208600] User 1000 is closing file: 3
+[15727.208606] User 1000 is opening file: /usr/lib/sudo/libutil.so.1
+[15727.208613] User 1000 is opening file: /lib/i386-linux-gnu/libutil.so.1
+[15727.208632] User 1000 is closing file: 3
+[15727.208636] User 1000 is opening file: /usr/lib/sudo/libsudo_util.so.0
+[15727.208655] User 1000 is closing file: 3
+[15727.208663] User 1000 is opening file: /usr/lib/sudo/libc.so.6
+[15727.208669] User 1000 is opening file: /lib/i386-linux-gnu/libc.so.6
+[15727.208697] User 1000 is closing file: 3
+[15727.208706] User 1000 is opening file: /usr/lib/sudo/libpcre.so.3
+[15727.208713] User 1000 is opening file: /lib/i386-linux-gnu/libpcre.so.3
+[15727.208734] User 1000 is closing file: 3
+[15727.208740] User 1000 is opening file: /usr/lib/sudo/libdl.so.2
+[15727.208746] User 1000 is opening file: /lib/i386-linux-gnu/libdl.so.2
+[15727.208766] User 1000 is closing file: 3
+[15727.208773] User 1000 is opening file: /usr/lib/sudo/libpthread.so.0
+[15727.208779] User 1000 is opening file: /lib/i386-linux-gnu/libpthread.so.0
+[15727.208804] User 1000 is closing file: 3
+[15727.209135] User 1000 is opening file: /proc/filesystems
+[15727.209171] User 1000 is closing file: 3
+[15727.209194] User 1000 is opening file: /usr/lib/locale/locale-archive
+[15727.209210] User 1000 is closing file: 3
+[15727.209233] User 1000 is opening file: /etc/localtime
+[15727.209252] User 1000 is closing file: 3
+[15727.209281] User 1000 is opening file: /dev/tty
+[15727.209289] User 1000 is closing file: 3
+[15727.209311] User 1000 is closing file: 3
+[15727.209319] User 1000 is closing file: 3
+[15727.209326] User 1000 is opening file: /etc/nsswitch.conf
+[15727.209343] User 1000 is closing file: 3
+[15727.210627] User 1000 is opening file: /usr/lib/sudo/libnss_compat.so.2
+[15727.210633] User 1000 is opening file: /etc/ld.so.cache
+[15727.210641] User 1000 is closing file: 3
+[15727.210650] User 1000 is opening file: /lib/i386-linux-gnu/libnss_compat.so.2
+[15727.210675] User 1000 is closing file: 3
+[15727.210682] User 1000 is opening file: /usr/lib/sudo/libnsl.so.1
+[15727.210689] User 1000 is opening file: /lib/i386-linux-gnu/libnsl.so.1
+[15727.210716] User 1000 is closing file: 3
+[15727.210858] User 1000 is opening file: /usr/lib/sudo/libnss_nis.so.2
+[15727.210864] User 1000 is opening file: /etc/ld.so.cache
+[15727.210873] User 1000 is closing file: 3
+[15727.210884] User 1000 is opening file: /lib/i386-linux-gnu/libnss_nis.so.2
+[15727.210911] User 1000 is closing file: 3
+[15727.210918] User 1000 is opening file: /usr/lib/sudo/libnss_files.so.2
+[15727.210925] User 1000 is opening file: /lib/i386-linux-gnu/libnss_files.so.2
+[15727.210951] User 1000 is closing file: 3
+[15727.210989] User 1000 is opening file: /etc/passwd
+[15727.211018] User 1000 is closing file: 3
+[15727.211036] User 1000 is opening file: /proc/sys/kernel/ngroups_max
+[15727.211045] User 1000 is closing file: 3
+[15727.211054] User 1000 is opening file: /proc/8320/stat
+[15727.211072] User 1000 is closing file: 3
+[15727.211139] User 1000 is closing file: 3
+[15727.211168] User 1000 is opening file: /usr/lib/sudo/sudoers.so
+[15727.211194] User 1000 is closing file: 3
+[15727.211202] User 1000 is opening file: /usr/lib/sudo/libpam.so.0
+[15727.211206] User 1000 is opening file: /usr/lib/sudo/libpam.so.0
+[15727.211209] User 1000 is opening file: /etc/ld.so.cache
+[15727.211215] User 1000 is closing file: 3
+[15727.211222] User 1000 is opening file: /lib/i386-linux-gnu/libpam.so.0
+[15727.211243] User 1000 is closing file: 3
+[15727.211364] User 1000 is opening file: /etc/passwd
+[15727.211380] User 1000 is opening file: /etc/default/nss
+[15727.211397] User 1000 is closing file: 4
+[15727.211408] User 1000 is opening file: /etc/group
+[15727.211424] User 1000 is opening file: /usr/share/locale/locale.alias
+[15727.211454] User 1000 is closing file: 5
+[15727.211509] User 1000 is opening file: /usr/share/locale/en_US.UTF-8/LC_MESSAGES/sudoers.mo
+[15727.211513] User 1000 is opening file: /usr/share/locale/en_US.utf8/LC_MESSAGES/sudoers.mo
+[15727.211516] User 1000 is opening file: /usr/share/locale/en_US/LC_MESSAGES/sudoers.mo
+[15727.211518] User 1000 is opening file: /usr/share/locale/en.UTF-8/LC_MESSAGES/sudoers.mo
+[15727.211521] User 1000 is opening file: /usr/share/locale/en.utf8/LC_MESSAGES/sudoers.mo
+[15727.211524] User 1000 is opening file: /usr/share/locale/en/LC_MESSAGES/sudoers.mo
+[15727.211528] User 1000 is opening file: /usr/share/locale-langpack/en_US.UTF-8/LC_MESSAGES/sudoers.mo
+[15727.211531] User 1000 is opening file: /usr/share/locale-langpack/en_US.utf8/LC_MESSAGES/sudoers.mo
+[15727.211534] User 1000 is opening file: /usr/share/locale-langpack/en_US/LC_MESSAGES/sudoers.mo
+[15727.211537] User 1000 is opening file: /usr/share/locale-langpack/en.UTF-8/LC_MESSAGES/sudoers.mo
+[15727.211540] User 1000 is opening file: /usr/share/locale-langpack/en.utf8/LC_MESSAGES/sudoers.mo
+[15727.211542] User 1000 is opening file: /usr/share/locale-langpack/en/LC_MESSAGES/sudoers.mo
+[15727.211578] User 1000 is opening file: /etc/passwd
+[15727.211605] User 1000 is closing file: 5
+[15727.211626] User 1000 is closing file: 5
+[15727.211633] User 1000 is closing file: 5
+[15727.211638] User 1000 is opening file: /etc/group
+[15727.211664] User 1000 is closing file: 5
+[15727.211670] User 1000 is opening file: /etc/group
+[15727.211680] User 1000 is closing file: 5
+[15727.211685] User 1000 is opening file: /etc/group
+[15727.211696] User 1000 is closing file: 5
+[15727.211701] User 1000 is opening file: /etc/group
+[15727.211712] User 1000 is closing file: 5
+[15727.211716] User 1000 is opening file: /etc/group
+[15727.211728] User 1000 is closing file: 5
+[15727.211732] User 1000 is opening file: /etc/group
+[15727.211745] User 1000 is closing file: 5
+[15727.211749] User 1000 is opening file: /etc/group
+[15727.211766] User 1000 is closing file: 5
+[15727.211770] User 1000 is opening file: /etc/group
+[15727.211788] User 1000 is closing file: 5
+[15727.211794] User 1000 is opening file: /etc/nsswitch.conf
+[15727.211809] User 1000 is closing file: 5
+[15727.212029] User 1000 is opening file: /proc/sys/kernel/ngroups_max
+[15727.212036] User 1000 is closing file: 8
+[15727.212054] User 1000 is opening file: /etc/group
+[15727.212080] User 1000 is closing file: 8
+[15727.212090] User 1000 is opening file: /etc/group
+[15727.212100] User 1000 is closing file: 8
+[15727.212220] User 1000 is opening file: /etc/pam.d/sudo
+[15727.212240] User 1000 is opening file: /lib/i386-linux-gnu/security/pam_env.so
+[15727.212266] User 1000 is closing file: 9
+[15727.212304] User 1000 is opening file: /etc/pam.d/common-auth
+[15727.212324] User 1000 is opening file: /lib/i386-linux-gnu/security/pam_unix.so
+[15727.212352] User 1000 is closing file: 10
+[15727.212360] User 1000 is opening file: /usr/lib/sudo/libcrypt.so.1
+[15727.212366] User 1000 is opening file: /etc/ld.so.cache
+[15727.212371] User 1000 is closing file: 10
+[15727.212381] User 1000 is opening file: /lib/i386-linux-gnu/libcrypt.so.1
+[15727.212407] User 1000 is closing file: 10
+[15727.212495] User 1000 is opening file: /lib/i386-linux-gnu/security/pam_deny.so
+[15727.212518] User 1000 is closing file: 10
+[15727.212536] User 1000 is opening file: /lib/i386-linux-gnu/security/pam_permit.so
+[15727.212557] User 1000 is closing file: 10
+[15727.212577] User 1000 is closing file: 9
+[15727.212585] User 1000 is opening file: /etc/pam.d/common-account
+[15727.212603] User 1000 is closing file: 9
+[15727.212609] User 1000 is opening file: /etc/pam.d/common-session-noninteractive
+[15727.212630] User 1000 is opening file: /lib/i386-linux-gnu/security/pam_umask.so
+[15727.212652] User 1000 is closing file: 10
+[15727.212681] User 1000 is closing file: 9
+[15727.212685] User 1000 is closing file: 8
+[15727.212687] User 1000 is opening file: /etc/pam.d/other
+[15727.212699] User 1000 is opening file: /etc/pam.d/common-auth
+[15727.212715] User 1000 is closing file: 9
+[15727.212720] User 1000 is opening file: /etc/pam.d/common-account
+[15727.212735] User 1000 is closing file: 9
+[15727.212740] User 1000 is opening file: /etc/pam.d/common-password
+[15727.214700] User 1000 is opening file: /lib/i386-linux-gnu/security/pam_gnome_keyring.so
+[15727.214730] User 1000 is closing file: 10
+[15727.214779] User 1000 is closing file: 9
+[15727.214787] User 1000 is opening file: /etc/pam.d/common-session
+[15727.214817] User 1000 is opening file: /lib/i386-linux-gnu/security/pam_systemd.so
+[15727.214841] User 1000 is closing file: 10
+[15727.214849] User 1000 is opening file: /usr/lib/sudo/librt.so.1
+[15727.214854] User 1000 is opening file: /etc/ld.so.cache
+[15727.214860] User 1000 is closing file: 10
+[15727.214868] User 1000 is opening file: /lib/i386-linux-gnu/librt.so.1
+[15727.214893] User 1000 is closing file: 10
+[15727.214900] User 1000 is opening file: /usr/lib/sudo/libpam_misc.so.0
+[15727.214907] User 1000 is opening file: /lib/i386-linux-gnu/libpam_misc.so.0
+[15727.214929] User 1000 is closing file: 10
+[15727.214935] User 1000 is opening file: /usr/lib/sudo/libgcc_s.so.1
+[15727.214943] User 1000 is opening file: /lib/i386-linux-gnu/libgcc_s.so.1
+[15727.214963] User 1000 is closing file: 10
+[15727.215122] User 1000 is closing file: 9
+[15727.215125] User 1000 is closing file: 8
+[15727.215135] User 1000 is opening file: /var/run/sudo/ts/tom
+[15727.215142] User 1000 is opening file: /proc/stat
+[15727.215166] User 1000 is closing file: 9
+[15727.215195] User 1000 is closing file: 8
+[15727.215517] User 1000 is closing file: 5
+[15727.215581] User 1000 is closing file: 3
+[15727.215586] User 1000 is closing file: 4
+[15727.215595] User 1000 is opening file: /etc/passwd
+[15727.215601] User 1000 is opening file: /etc/group
+[15727.215607] User 1000 is opening file: /etc/passwd
+[15727.215621] User 1000 is closing file: 8
+[15727.215628] User 1000 is closing file: 3
+[15727.215631] User 1000 is closing file: 4
+[15727.215638] User 1000 is opening file: /etc/passwd
+[15727.215649] User 1000 is closing file: 3
+[15729.327935] User 1000 is opening file: /etc/localtime
+[15729.327961] User 1000 is closing file: 17
+[15729.327991] User 1000 is opening file: /etc/localtime
+[15729.328000] User 1000 is closing file: 17
+[15731.868567] User 1000 is opening file: /home/tom/Downloads/.hidden
+[15733.124045] User 1000 is closing file: 3
+[15733.124050] User 1000 is closing file: 4
+[15733.124103] User 1000 is closing file: 4
+[15733.124108] User 1000 is closing file: 3
+[15733.124305] User 1000 is opening file: /etc/ld.so.cache
+[15733.124311] User 1000 is closing file: 3
+[15733.124320] User 1000 is opening file: /lib/i386-linux-gnu/libtinfo.so.5
+[15733.124337] User 1000 is closing file: 3
+[15733.124346] User 1000 is opening file: /lib/i386-linux-gnu/libc.so.6
+[15733.124413] User 1000 is closing file: 3
+[15733.124588] User 1000 is opening file: /lib/terminfo/x/xterm-256color
+[15733.124612] User 1000 is closing file: 3
+[15733.167445] User 1000 is opening file: /etc/fstab
+[15733.167491] User 1000 is closing file: 22
+[15733.167499] User 1000 is opening file: /proc/mounts
+[15733.167640] User 1000 is closing file: 22
+[15733.572220] User 1000 is closing file: 3
+[15733.572225] User 1000 is closing file: 4
+[15733.572291] User 1000 is closing file: 4
+[15733.572296] User 1000 is closing file: 3
+[15733.572540] User 1000 is opening file: /etc/ld.so.cache
+[15733.572549] User 1000 is closing file: 3
+[15733.572559] User 1000 is opening file: /lib/i386-linux-gnu/libselinux.so.1
+[15733.572591] User 1000 is closing file: 3
+[15733.572602] User 1000 is opening file: /lib/i386-linux-gnu/libc.so.6
+[15733.572628] User 1000 is closing file: 3
+[15733.572640] User 1000 is opening file: /lib/i386-linux-gnu/libpcre.so.3
+[15733.572662] User 1000 is closing file: 3
+[15733.572672] User 1000 is opening file: /lib/i386-linux-gnu/libdl.so.2
+[15733.572694] User 1000 is closing file: 3
+[15733.572701] User 1000 is opening file: /lib/i386-linux-gnu/libpthread.so.0
+[15733.572727] User 1000 is closing file: 3
+[15733.572952] User 1000 is opening file: /proc/filesystems
+[15733.572987] User 1000 is closing file: 3
+[15733.573011] User 1000 is opening file: /usr/lib/locale/locale-archive
+[15733.573027] User 1000 is closing file: 3
+[15733.573087] User 1000 is opening file: .
+[15733.573121] User 1000 is closing file: 3
+[15733.574148] User 1000 is closing file: 1
+[15733.574153] User 1000 is closing file: 2
+[15734.167938] User 1000 is opening file: /etc/localtime
+[15734.167973] User 1000 is closing file: 11
+[15734.168019] User 1000 is opening file: /etc/localtime
+[15734.168078] User 1000 is closing file: 11
+[15736.327078] User 1000 is opening file: /etc/localtime
+[15736.327111] User 1000 is closing file: 17
+[15736.327146] User 1000 is opening file: /etc/localtime
+[15736.327155] User 1000 is closing file: 17
+[15737.018029] User 1000 is closing file: 3
+[15737.018034] User 1000 is closing file: 4
+[15737.018095] User 1000 is closing file: 4
+[15737.018101] User 1000 is closing file: 3
+[15737.018332] User 1000 is opening file: /etc/ld.so.cache
+[15737.018340] User 1000 is closing file: 3
+[15737.018350] User 1000 is opening file: /lib/i386-linux-gnu/libc.so.6
+[15737.018377] User 1000 is closing file: 3
+[15737.018563] User 1000 is opening file: /usr/lib/locale/locale-archive
+[15737.018581] User 1000 is closing file: 3
+[15737.018610] User 1000 is opening file: /usr/share/locale/locale.alias
+[15737.018644] User 1000 is closing file: 3
+[15737.018693] User 1000 is opening file: /usr/share/locale/en_US.UTF-8/LC_MESSAGES/gcc-5.mo
+[15737.018696] User 1000 is opening file: /usr/share/locale/en_US.utf8/LC_MESSAGES/gcc-5.mo
+[15737.018699] User 1000 is opening file: /usr/share/locale/en_US/LC_MESSAGES/gcc-5.mo
+[15737.018701] User 1000 is opening file: /usr/share/locale/en.UTF-8/LC_MESSAGES/gcc-5.mo
+[15737.018704] User 1000 is opening file: /usr/share/locale/en.utf8/LC_MESSAGES/gcc-5.mo
+[15737.018706] User 1000 is opening file: /usr/share/locale/en/LC_MESSAGES/gcc-5.mo
+[15737.018710] User 1000 is opening file: /usr/share/locale-langpack/en_US.UTF-8/LC_MESSAGES/gcc-5.mo
+[15737.018713] User 1000 is opening file: /usr/share/locale-langpack/en_US.utf8/LC_MESSAGES/gcc-5.mo
+[15737.018716] User 1000 is opening file: /usr/share/locale-langpack/en_US/LC_MESSAGES/gcc-5.mo
+[15737.018720] User 1000 is opening file: /usr/share/locale-langpack/en.UTF-8/LC_MESSAGES/gcc-5.mo
+[15737.018722] User 1000 is opening file: /usr/share/locale-langpack/en.utf8/LC_MESSAGES/gcc-5.mo
+[15737.018725] User 1000 is opening file: /usr/share/locale-langpack/en/LC_MESSAGES/gcc-5.mo
+[15737.018978] User 1000 is opening file: /tmp/ccL7M7IA.s
+[15737.019005] User 1000 is closing file: 3
+[15737.019390] User 1000 is opening file: /etc/ld.so.cache
+[15737.019398] User 1000 is closing file: 3
+[15737.019406] User 1000 is opening file: /usr/lib/i386-linux-gnu/libisl.so.15
+[15737.019427] User 1000 is closing file: 3
+[15737.019439] User 1000 is opening file: /usr/lib/i386-linux-gnu/libmpc.so.3
+[15737.019457] User 1000 is closing file: 3
+[15737.019465] User 1000 is opening file: /usr/lib/i386-linux-gnu/libmpfr.so.4
+[15737.019482] User 1000 is closing file: 3
+[15737.019493] User 1000 is opening file: /usr/lib/i386-linux-gnu/libgmp.so.10
+[15737.019511] User 1000 is closing file: 3
+[15737.019520] User 1000 is opening file: /lib/i386-linux-gnu/libdl.so.2
+[15737.019541] User 1000 is closing file: 3
+[15737.019547] User 1000 is opening file: /lib/i386-linux-gnu/libz.so.1
+[15737.019571] User 1000 is closing file: 3
+[15737.019579] User 1000 is opening file: /lib/i386-linux-gnu/libm.so.6
+[15737.019600] User 1000 is closing file: 3
+[15737.019608] User 1000 is opening file: /lib/i386-linux-gnu/libc.so.6
+[15737.019629] User 1000 is closing file: 3
+[15737.020061] User 1000 is opening file: /usr/lib/locale/locale-archive
+[15737.020076] User 1000 is closing file: 3
+[15737.020104] User 1000 is opening file: /usr/share/locale/locale.alias
+[15737.020133] User 1000 is closing file: 3
+[15737.020187] User 1000 is opening file: /usr/share/locale/en_US.UTF-8/LC_MESSAGES/gcc-5.mo
+[15737.020191] User 1000 is opening file: /usr/share/locale/en_US.utf8/LC_MESSAGES/gcc-5.mo
+[15737.020193] User 1000 is opening file: /usr/share/locale/en_US/LC_MESSAGES/gcc-5.mo
+[15737.020196] User 1000 is opening file: /usr/share/locale/en.UTF-8/LC_MESSAGES/gcc-5.mo
+[15737.020198] User 1000 is opening file: /usr/share/locale/en.utf8/LC_MESSAGES/gcc-5.mo
+[15737.020201] User 1000 is opening file: /usr/share/locale/en/LC_MESSAGES/gcc-5.mo
+[15737.020204] User 1000 is opening file: /usr/share/locale-langpack/en_US.UTF-8/LC_MESSAGES/gcc-5.mo
+[15737.020207] User 1000 is opening file: /usr/share/locale-langpack/en_US.utf8/LC_MESSAGES/gcc-5.mo
+[15737.020209] User 1000 is opening file: /usr/share/locale-langpack/en_US/LC_MESSAGES/gcc-5.mo
+[15737.020213] User 1000 is opening file: /usr/share/locale-langpack/en.UTF-8/LC_MESSAGES/gcc-5.mo
+[15737.020215] User 1000 is opening file: /usr/share/locale-langpack/en.utf8/LC_MESSAGES/gcc-5.mo
+[15737.020217] User 1000 is opening file: /usr/share/locale-langpack/en/LC_MESSAGES/gcc-5.mo
+[15737.022106] User 1000 is opening file: /dev/urandom
+[15737.022119] User 1000 is closing file: 3
+[15737.022203] User 1000 is opening file: 3.c
+[15737.022213] User 1000 is closing file: 3
+[15737.023771] User 1000 is opening file: /tmp/ccL7M7IA.s
+[15737.024051] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include/stdc-predef.h
+[15737.024060] User 1000 is opening file: /usr/local/include/stdc-predef.h
+[15737.024070] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include-fixed/stdc-predef.h
+[15737.024077] User 1000 is opening file: /usr/include/i386-linux-gnu/stdc-predef.h
+[15737.024082] User 1000 is opening file: /usr/include/stdc-predef.h
+[15737.024090] User 1000 is closing file: 4
+[15737.024156] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include/sys/syscall.h
+[15737.024163] User 1000 is opening file: /usr/local/include/sys/syscall.h
+[15737.024172] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include-fixed/sys/syscall.h
+[15737.024181] User 1000 is opening file: /usr/include/i386-linux-gnu/sys/syscall.h
+[15737.024186] User 1000 is closing file: 4
+[15737.024197] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include/asm/unistd.h
+[15737.024203] User 1000 is opening file: /usr/local/include/asm/unistd.h
+[15737.024211] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include-fixed/asm/unistd.h
+[15737.024218] User 1000 is opening file: /usr/include/i386-linux-gnu/asm/unistd.h
+[15737.024221] User 1000 is closing file: 4
+[15737.024232] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include/asm/unistd_32.h
+[15737.024238] User 1000 is opening file: /usr/local/include/asm/unistd_32.h
+[15737.024259] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include-fixed/asm/unistd_32.h
+[15737.024279] User 1000 is opening file: /usr/include/i386-linux-gnu/asm/unistd_32.h
+[15737.024285] User 1000 is closing file: 4
+[15737.024414] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include/bits/syscall.h
+[15737.024421] User 1000 is opening file: /usr/local/include/bits/syscall.h
+[15737.024429] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include-fixed/bits/syscall.h
+[15737.024436] User 1000 is opening file: /usr/include/i386-linux-gnu/bits/syscall.h
+[15737.024452] User 1000 is closing file: 4
+[15737.024738] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include/stdio.h
+[15737.024746] User 1000 is opening file: /usr/local/include/stdio.h
+[15737.024754] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include-fixed/stdio.h
+[15737.024759] User 1000 is opening file: /usr/include/i386-linux-gnu/stdio.h
+[15737.024764] User 1000 is opening file: /usr/include/stdio.h
+[15737.024773] User 1000 is closing file: 4
+[15737.024785] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include/features.h
+[15737.024791] User 1000 is opening file: /usr/local/include/features.h
+[15737.024799] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include-fixed/features.h
+[15737.024804] User 1000 is opening file: /usr/include/i386-linux-gnu/features.h
+[15737.024809] User 1000 is opening file: /usr/include/features.h
+[15737.025549] User 1000 is closing file: 4
+[15737.025658] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include/sys/cdefs.h
+[15737.025665] User 1000 is opening file: /usr/local/include/sys/cdefs.h
+[15737.025673] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include-fixed/sys/cdefs.h
+[15737.025680] User 1000 is opening file: /usr/include/i386-linux-gnu/sys/cdefs.h
+[15737.025689] User 1000 is closing file: 4
+[15737.025878] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include/bits/wordsize.h
+[15737.025884] User 1000 is opening file: /usr/local/include/bits/wordsize.h
+[15737.025892] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include-fixed/bits/wordsize.h
+[15737.025899] User 1000 is opening file: /usr/include/i386-linux-gnu/bits/wordsize.h
+[15737.025904] User 1000 is closing file: 4
+[15737.025941] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include/gnu/stubs.h
+[15737.025947] User 1000 is opening file: /usr/local/include/gnu/stubs.h
+[15737.025956] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include-fixed/gnu/stubs.h
+[15737.025964] User 1000 is opening file: /usr/include/i386-linux-gnu/gnu/stubs.h
+[15737.025967] User 1000 is closing file: 4
+[15737.025977] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include/gnu/stubs-32.h
+[15737.025982] User 1000 is opening file: /usr/local/include/gnu/stubs-32.h
+[15737.025990] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include-fixed/gnu/stubs-32.h
+[15737.025997] User 1000 is opening file: /usr/include/i386-linux-gnu/gnu/stubs-32.h
+[15737.026000] User 1000 is closing file: 4
+[15737.026020] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include/stddef.h
+[15737.026026] User 1000 is closing file: 4
+[15737.026131] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include/bits/types.h
+[15737.026137] User 1000 is opening file: /usr/local/include/bits/types.h
+[15737.026145] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include-fixed/bits/types.h
+[15737.026152] User 1000 is opening file: /usr/include/i386-linux-gnu/bits/types.h
+[15737.026157] User 1000 is closing file: 4
+[15737.026162] User 1000 is opening file: /usr/include/i386-linux-gnu/bits/wordsize.h
+[15737.026166] User 1000 is closing file: 4
+[15737.026217] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include/bits/typesizes.h
+[15737.026223] User 1000 is opening file: /usr/local/include/bits/typesizes.h
+[15737.026231] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include-fixed/bits/typesizes.h
+[15737.026239] User 1000 is opening file: /usr/include/i386-linux-gnu/bits/typesizes.h
+[15737.026244] User 1000 is closing file: 4
+[15737.026403] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include/libio.h
+[15737.026409] User 1000 is opening file: /usr/local/include/libio.h
+[15737.026417] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include-fixed/libio.h
+[15737.026422] User 1000 is opening file: /usr/include/i386-linux-gnu/libio.h
+[15737.026427] User 1000 is opening file: /usr/include/libio.h
+[15737.026434] User 1000 is closing file: 4
+[15737.026446] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include/_G_config.h
+[15737.026452] User 1000 is opening file: /usr/local/include/_G_config.h
+[15737.026460] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include-fixed/_G_config.h
+[15737.026465] User 1000 is opening file: /usr/include/i386-linux-gnu/_G_config.h
+[15737.026470] User 1000 is opening file: /usr/include/_G_config.h
+[15737.026473] User 1000 is closing file: 4
+[15737.026479] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include/stddef.h
+[15737.026484] User 1000 is closing file: 4
+[15737.026574] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include/wchar.h
+[15737.026580] User 1000 is opening file: /usr/local/include/wchar.h
+[15737.026588] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include-fixed/wchar.h
+[15737.026593] User 1000 is opening file: /usr/include/i386-linux-gnu/wchar.h
+[15737.026598] User 1000 is opening file: /usr/include/wchar.h
+[15737.026608] User 1000 is closing file: 4
+[15737.027157] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include/stdarg.h
+[15737.027167] User 1000 is closing file: 4
+[15737.027535] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include/bits/stdio_lim.h
+[15737.027543] User 1000 is opening file: /usr/local/include/bits/stdio_lim.h
+[15737.027552] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include-fixed/bits/stdio_lim.h
+[15737.027559] User 1000 is opening file: /usr/include/i386-linux-gnu/bits/stdio_lim.h
+[15737.027565] User 1000 is closing file: 4
+[15737.028136] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include/bits/sys_errlist.h
+[15737.028144] User 1000 is opening file: /usr/local/include/bits/sys_errlist.h
+[15737.028154] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include-fixed/bits/sys_errlist.h
+[15737.028161] User 1000 is opening file: /usr/include/i386-linux-gnu/bits/sys_errlist.h
+[15737.028166] User 1000 is closing file: 4
+[15737.028230] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include/unistd.h
+[15737.028237] User 1000 is opening file: /usr/local/include/unistd.h
+[15737.028245] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include-fixed/unistd.h
+[15737.028251] User 1000 is opening file: /usr/include/i386-linux-gnu/unistd.h
+[15737.028255] User 1000 is opening file: /usr/include/unistd.h
+[15737.028265] User 1000 is closing file: 4
+[15737.028300] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include/bits/posix_opt.h
+[15737.028305] User 1000 is opening file: /usr/local/include/bits/posix_opt.h
+[15737.028313] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include-fixed/bits/posix_opt.h
+[15737.028320] User 1000 is opening file: /usr/include/i386-linux-gnu/bits/posix_opt.h
+[15737.028324] User 1000 is closing file: 4
+[15737.028365] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include/bits/environments.h
+[15737.028371] User 1000 is opening file: /usr/local/include/bits/environments.h
+[15737.028379] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include-fixed/bits/environments.h
+[15737.028386] User 1000 is opening file: /usr/include/i386-linux-gnu/bits/environments.h
+[15737.028390] User 1000 is closing file: 4
+[15737.028395] User 1000 is opening file: /usr/include/i386-linux-gnu/bits/wordsize.h
+[15737.028398] User 1000 is closing file: 4
+[15737.028421] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include/stddef.h
+[15737.028427] User 1000 is closing file: 4
+[15737.030487] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include/bits/confname.h
+[15737.030495] User 1000 is opening file: /usr/local/include/bits/confname.h
+[15737.030504] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include-fixed/bits/confname.h
+[15737.030511] User 1000 is opening file: /usr/include/i386-linux-gnu/bits/confname.h
+[15737.030520] User 1000 is closing file: 4
+[15737.031078] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include/getopt.h
+[15737.031086] User 1000 is opening file: /usr/local/include/getopt.h
+[15737.031094] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/include-fixed/getopt.h
+[15737.031100] User 1000 is opening file: /usr/include/i386-linux-gnu/getopt.h
+[15737.031104] User 1000 is opening file: /usr/include/getopt.h
+[15737.031110] User 1000 is closing file: 4
+[15737.035244] User 1000 is closing file: 3
+[15737.035852] User 1000 is opening file: /tmp/cc0MjMjE.o
+[15737.035881] User 1000 is closing file: 3
+[15737.036058] User 1000 is opening file: /etc/ld.so.cache
+[15737.036065] User 1000 is closing file: 3
+[15737.036072] User 1000 is opening file: /usr/lib/i386-linux-gnu/libopcodes-2.26.1-system.so
+[15737.036094] User 1000 is closing file: 3
+[15737.036103] User 1000 is opening file: /usr/lib/i386-linux-gnu/libbfd-2.26.1-system.so
+[15737.036125] User 1000 is closing file: 3
+[15737.036134] User 1000 is opening file: /lib/i386-linux-gnu/libz.so.1
+[15737.036182] User 1000 is closing file: 3
+[15737.036208] User 1000 is opening file: /lib/i386-linux-gnu/libc.so.6
+[15737.036233] User 1000 is closing file: 3
+[15737.036244] User 1000 is opening file: /lib/i386-linux-gnu/libdl.so.2
+[15737.036263] User 1000 is closing file: 3
+[15737.038135] User 1000 is opening file: /usr/lib/locale/locale-archive
+[15737.038161] User 1000 is closing file: 3
+[15737.038870] User 1000 is opening file: /tmp/cc0MjMjE.o
+[15737.039608] User 1000 is opening file: /tmp/ccL7M7IA.s
+[15737.039749] User 1000 is closing file: 4
+[15737.039861] User 1000 is opening file: /usr/share/locale/locale.alias
+[15737.039898] User 1000 is closing file: 4
+[15737.039939] User 1000 is opening file: /usr/share/locale/en_US.UTF-8/LC_MESSAGES/gas.mo
+[15737.039942] User 1000 is opening file: /usr/share/locale/en_US.utf8/LC_MESSAGES/gas.mo
+[15737.039945] User 1000 is opening file: /usr/share/locale/en_US/LC_MESSAGES/gas.mo
+[15737.039947] User 1000 is opening file: /usr/share/locale/en.UTF-8/LC_MESSAGES/gas.mo
+[15737.039949] User 1000 is opening file: /usr/share/locale/en.utf8/LC_MESSAGES/gas.mo
+[15737.039951] User 1000 is opening file: /usr/share/locale/en/LC_MESSAGES/gas.mo
+[15737.039955] User 1000 is opening file: /usr/share/locale-langpack/en_US.UTF-8/LC_MESSAGES/gas.mo
+[15737.039957] User 1000 is opening file: /usr/share/locale-langpack/en_US.utf8/LC_MESSAGES/gas.mo
+[15737.039973] User 1000 is opening file: /usr/share/locale-langpack/en_US/LC_MESSAGES/gas.mo
+[15737.039976] User 1000 is opening file: /usr/share/locale-langpack/en.UTF-8/LC_MESSAGES/gas.mo
+[15737.039978] User 1000 is opening file: /usr/share/locale-langpack/en.utf8/LC_MESSAGES/gas.mo
+[15737.039980] User 1000 is opening file: /usr/share/locale-langpack/en/LC_MESSAGES/gas.mo
+[15737.040412] User 1000 is closing file: 3
+[15737.041293] User 1000 is opening file: /tmp/ccpHdvVH.res
+[15737.041314] User 1000 is closing file: 3
+[15737.041575] User 1000 is opening file: /etc/ld.so.cache
+[15737.041582] User 1000 is closing file: 3
+[15737.041593] User 1000 is opening file: /lib/i386-linux-gnu/libc.so.6
+[15737.041621] User 1000 is closing file: 3
+[15737.041792] User 1000 is opening file: /usr/lib/locale/locale-archive
+[15737.041810] User 1000 is closing file: 3
+[15737.041839] User 1000 is opening file: /usr/share/locale/locale.alias
+[15737.041866] User 1000 is closing file: 3
+[15737.041907] User 1000 is opening file: /usr/share/locale/en_US.UTF-8/LC_MESSAGES/gcc-5.mo
+[15737.041910] User 1000 is opening file: /usr/share/locale/en_US.utf8/LC_MESSAGES/gcc-5.mo
+[15737.041912] User 1000 is opening file: /usr/share/locale/en_US/LC_MESSAGES/gcc-5.mo
+[15737.041914] User 1000 is opening file: /usr/share/locale/en.UTF-8/LC_MESSAGES/gcc-5.mo
+[15737.041916] User 1000 is opening file: /usr/share/locale/en.utf8/LC_MESSAGES/gcc-5.mo
+[15737.041918] User 1000 is opening file: /usr/share/locale/en/LC_MESSAGES/gcc-5.mo
+[15737.041921] User 1000 is opening file: /usr/share/locale-langpack/en_US.UTF-8/LC_MESSAGES/gcc-5.mo
+[15737.041924] User 1000 is opening file: /usr/share/locale-langpack/en_US.utf8/LC_MESSAGES/gcc-5.mo
+[15737.041926] User 1000 is opening file: /usr/share/locale-langpack/en_US/LC_MESSAGES/gcc-5.mo
+[15737.041929] User 1000 is opening file: /usr/share/locale-langpack/en.UTF-8/LC_MESSAGES/gcc-5.mo
+[15737.041931] User 1000 is opening file: /usr/share/locale-langpack/en.utf8/LC_MESSAGES/gcc-5.mo
+[15737.041933] User 1000 is opening file: /usr/share/locale-langpack/en/LC_MESSAGES/gcc-5.mo
+[15737.042048] User 1000 is opening file: /tmp/cc8h2HOC.c
+[15737.042061] User 1000 is closing file: 3
+[15737.042064] User 1000 is opening file: /tmp/ccXAlAqG.o
+[15737.042071] User 1000 is closing file: 3
+[15737.042073] User 1000 is opening file: /tmp/ccWZGs2J.ld
+[15737.042079] User 1000 is closing file: 3
+[15737.042081] User 1000 is opening file: /tmp/cc1CclEN.le
+[15737.042086] User 1000 is closing file: 3
+[15737.042092] User 1000 is opening file: /tmp/ccWZGs2J.ld
+[15737.042101] User 1000 is opening file: /tmp/cc1CclEN.le
+[15737.042116] User 1000 is closing file: 3
+[15737.042118] User 1000 is closing file: 4
+[15737.042156] User 1000 is closing file: 3
+[15737.042157] User 1000 is closing file: 4
+[15737.042237] User 1000 is opening file: /etc/ld.so.cache
+[15737.042243] User 1000 is closing file: 3
+[15737.042252] User 1000 is opening file: /usr/lib/i386-linux-gnu/libbfd-2.26.1-system.so
+[15737.042277] User 1000 is closing file: 3
+[15737.042288] User 1000 is opening file: /lib/i386-linux-gnu/libdl.so.2
+[15737.042310] User 1000 is closing file: 3
+[15737.042316] User 1000 is opening file: /lib/i386-linux-gnu/libc.so.6
+[15737.042339] User 1000 is closing file: 3
+[15737.042350] User 1000 is opening file: /lib/i386-linux-gnu/libz.so.1
+[15737.042371] User 1000 is closing file: 3
+[15737.042653] User 1000 is opening file: /usr/lib/locale/locale-archive
+[15737.042667] User 1000 is closing file: 3
+[15737.042730] User 1000 is opening file: /usr/lib/i386-linux-gnu/gconv/gconv-modules.cache
+[15737.042738] User 1000 is closing file: 3
+[15737.042805] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/liblto_plugin.so
+[15737.042827] User 1000 is closing file: 3
+[15737.042891] User 1000 is opening file: /usr/share/locale/locale.alias
+[15737.042920] User 1000 is closing file: 3
+[15737.042961] User 1000 is opening file: /usr/share/locale/en_US.UTF-8/LC_MESSAGES/ld.mo
+[15737.042964] User 1000 is opening file: /usr/share/locale/en_US.utf8/LC_MESSAGES/ld.mo
+[15737.042966] User 1000 is opening file: /usr/share/locale/en_US/LC_MESSAGES/ld.mo
+[15737.042968] User 1000 is opening file: /usr/share/locale/en.UTF-8/LC_MESSAGES/ld.mo
+[15737.042970] User 1000 is opening file: /usr/share/locale/en.utf8/LC_MESSAGES/ld.mo
+[15737.042972] User 1000 is opening file: /usr/share/locale/en/LC_MESSAGES/ld.mo
+[15737.042974] User 1000 is opening file: /usr/share/locale-langpack/en_US.UTF-8/LC_MESSAGES/ld.mo
+[15737.042977] User 1000 is opening file: /usr/share/locale-langpack/en_US.utf8/LC_MESSAGES/ld.mo
+[15737.042979] User 1000 is opening file: /usr/share/locale-langpack/en_US/LC_MESSAGES/ld.mo
+[15737.042982] User 1000 is opening file: /usr/share/locale-langpack/en.UTF-8/LC_MESSAGES/ld.mo
+[15737.042984] User 1000 is opening file: /usr/share/locale-langpack/en.utf8/LC_MESSAGES/ld.mo
+[15737.042986] User 1000 is opening file: /usr/share/locale-langpack/en/LC_MESSAGES/ld.mo
+[15737.043432] User 1000 is opening file: a.out
+[15737.044476] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crt1.o
+[15737.044510] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crt1.o
+[15737.044542] User 1000 is closing file: 5
+[15737.044569] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crti.o
+[15737.044591] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crti.o
+[15737.044612] User 1000 is closing file: 6
+[15737.044630] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/crtbegin.o
+[15737.044650] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/crtbegin.o
+[15737.044670] User 1000 is closing file: 7
+[15737.044685] User 1000 is opening file: /tmp/cc0MjMjE.o
+[15737.044704] User 1000 is opening file: /tmp/cc0MjMjE.o
+[15737.044724] User 1000 is closing file: 8
+[15737.044737] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/libgcc.so
+[15737.044751] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/libgcc.a
+[15737.044873] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/libgcc_s.so
+[15737.044922] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/libgcc_s.so
+[15737.044946] User 1000 is closing file: 10
+[15737.045175] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/libc.so
+[15737.045181] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/libc.a
+[15737.045187] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/libc.so
+[15737.045225] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/libc.so
+[15737.045236] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/libc.so
+[15737.045256] User 1000 is closing file: 12
+[15737.045284] User 1000 is closing file: 10
+[15737.045287] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/libc.so
+[15737.045302] User 1000 is closing file: 10
+[15737.045307] User 1000 is opening file: /lib/i386-linux-gnu/libc.so.6
+[15737.045366] User 1000 is opening file: /lib/i386-linux-gnu/libc.so.6
+[15737.045393] User 1000 is closing file: 12
+[15737.049941] User 1000 is opening file: /usr/lib/i386-linux-gnu/libc_nonshared.a
+[15737.049983] User 1000 is opening file: /usr/lib/i386-linux-gnu/libc_nonshared.a
+[15737.050004] User 1000 is closing file: 13
+[15737.050033] User 1000 is opening file: /lib/i386-linux-gnu/ld-linux.so.2
+[15737.050075] User 1000 is opening file: /lib/i386-linux-gnu/ld-linux.so.2
+[15737.050093] User 1000 is closing file: 14
+[15737.052315] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/libgcc.so
+[15737.052325] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/libgcc.a
+[15737.052474] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/libgcc_s.so
+[15737.052546] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/libgcc_s.so
+[15737.052569] User 1000 is closing file: 16
+[15737.054142] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/crtend.o
+[15737.054162] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/crtend.o
+[15737.054179] User 1000 is closing file: 17
+[15737.054191] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crtn.o
+[15737.054203] User 1000 is opening file: /usr/lib/gcc/i686-linux-gnu/5/../../../i386-linux-gnu/crtn.o
+[15737.054218] User 1000 is closing file: 18
+[15737.054243] User 1000 is opening file: /lib/i386-linux-gnu/ld-linux.so.2
+[15737.058743] User 1000 is closing file: 3
+[15737.058788] User 1000 is closing file: 16
+[15737.058791] User 1000 is closing file: 7
+[15737.058793] User 1000 is closing file: 12
+[15737.058795] User 1000 is closing file: 6
+[15737.058796] User 1000 is closing file: 17
+[15737.058798] User 1000 is closing file: 5
+[15737.058800] User 1000 is closing file: 4
+[15737.058801] User 1000 is closing file: 18
+[15737.058803] User 1000 is closing file: 10
+[15737.058805] User 1000 is closing file: 14
+[15737.058807] User 1000 is closing file: 8
+[15737.058808] User 1000 is closing file: 15
+[15737.058810] User 1000 is closing file: 13
+[15737.058812] User 1000 is closing file: 9
+[15737.059024] User 1000 is opening file: /tmp/ccWZGs2J.ld
+[15737.059039] User 1000 is closing file: 3
+[15737.059059] User 1000 is opening file: /tmp/cc1CclEN.le
+[15737.059066] User 1000 is closing file: 3
+[15737.059085] User 1000 is opening file: /tmp/ccWZGs2J.ld
+[15737.059087] User 1000 is opening file: /tmp/cc1CclEN.le
+[15738.141578] User 1000 is opening file: /home/tom/Downloads/
+[15738.141767] User 1000 is closing file: 3
+[15738.694364] User 1000 is opening file: /home/tom/Downloads/
+[15738.694440] User 1000 is closing file: 3
+[15739.026306] User 1000 is closing file: 3
+[15739.026312] User 1000 is closing file: 4
+[15739.026392] User 1000 is closing file: 4
+[15739.026398] User 1000 is closing file: 3
+[15739.026718] User 1000 is opening file: /etc/ld.so.cache
+[15739.026727] User 1000 is closing file: 3
+[15739.026743] User 1000 is opening file: /lib/i386-linux-gnu/libc.so.6
+[15739.026777] User 1000 is closing file: 3
+[15739.026902] 'Hello, world!' -- syscall1
+[15743.327786] User 1000 is opening file: /etc/localtime
+[15743.327821] User 1000 is closing file: 17
+[15743.327855] User 1000 is opening file: /etc/localtime
+[15743.327865] User 1000 is closing file: 17
+[15744.074683] User 1000 is closing file: 3
+[15744.074688] User 1000 is closing file: 4
+[15744.074765] User 1000 is closing file: 4
+[15744.074772] User 1000 is closing file: 3
+[15744.075080] User 1000 is opening file: /etc/ld.so.cache
+[15744.075088] User 1000 is closing file: 3
+[15744.075099] User 1000 is opening file: /lib/i386-linux-gnu/libtinfo.so.5
+[15744.075125] User 1000 is closing file: 3
+[15744.075134] User 1000 is opening file: /lib/i386-linux-gnu/librt.so.1
+[15744.075160] User 1000 is closing file: 3
+[15744.075172] User 1000 is opening file: /lib/i386-linux-gnu/libc.so.6
+[15744.075203] User 1000 is closing file: 3
+[15744.075217] User 1000 is opening file: /lib/i386-linux-gnu/libpthread.so.0
+[15744.075247] User 1000 is closing file: 3
+[15744.075527] User 1000 is opening file: /usr/lib/locale/locale-archive
+[15744.075551] User 1000 is closing file: 3
+[15744.075633] User 1000 is opening file: /lib/terminfo/x/xterm-256color
+[15744.075666] User 1000 is closing file: 3
+[15744.075691] User 1000 is opening file: /home/tom/.config/terminal-colors.d
+[15744.075697] User 1000 is opening file: /etc/terminal-colors.d
+  GNU nano 2.5.3              File: syslog_1
+
+Sep 16 12:54:51 tomm rsyslogd: [origin software="rsyslogd" swVersion="8.16.0" x$
+Sep 16 12:54:58 tomm anacron[617]: Job `cron.daily' terminated
+Sep 16 12:54:58 tomm anacron[617]: Normal exit (1 job run)
+Sep 16 13:05:05 tomm systemd[1]: Starting Cleanup of Temporary Directories...
+Sep 16 13:05:05 tomm systemd-tmpfiles[2863]: [/usr/lib/tmpfiles.d/var.conf:14] $
+Sep 16 13:05:06 tomm systemd[1]: Started Cleanup of Temporary Directories.
+Sep 16 13:06:27 tomm kernel: [  346.279988] Unloaded module!
+Sep 16 13:06:36 tomm gnome-session[1397]: ** (zeitgeist-datahub:1857): WARNING $
+Sep 16 13:10:47 tomm kernel: [ 1001.090918] Table at memory address: 0xC17DB180$
+Sep 16 13:11:03 tomm kernel: [ 1260.965548] Unloaded module!Table at memory add$
+Sep 16 13:16:37 tomm gnome-session[1397]: ** (zeitgeist-datahub:1857): WARNING $
+Sep 16 13:17:00 tomm gnome-session[1397]: message repeated 2 times: [ ** (zeitg$
+Sep 16 13:17:01 tomm CRON[4626]: (root) CMD (   cd / && run-parts --report /etc$
+Sep 16 13:17:46 tomm gnome-session[1397]: ** (zeitgeist-datahub:1857): WARNING $
+Sep 16 13:19:47 tomm gnome-session[1397]: ** (zeitgeist-datahub:1857): WARNING $
+Sep 16 13:26:43 tomm gnome-session[1397]: ** (zeitgeist-datahub:1857): WARNING $
+Sep 16 13:27:30 tomm gnome-session[1397]: ** (zeitgeist-datahub:1857): WARNING $
+Sep 16 13:27:32 tomm kernel: [ 1276.610668] Loaded module!count 0
+Sep 16 13:28:13 tomm gnome-session[1397]: ** (zeitgeist-datahub:1857): WARNING $
+Sep 16 13:28:35 tomm gnome-session[1397]: ** (zeitgeist-datahub:1857): WARNING $
+                              [ Read 2870 lines ]
+^G Get Help  ^O Write Out ^W Where Is  ^K Cut Text  ^J Justify   ^C Cur Pos
+^X Exit      ^R Read File ^\ Replace   ^U Uncut Text^T To Spell  ^_ Go To Line
